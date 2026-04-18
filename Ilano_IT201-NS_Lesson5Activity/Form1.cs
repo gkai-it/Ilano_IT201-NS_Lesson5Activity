@@ -186,8 +186,15 @@ namespace Ilano_IT201_NS_Lesson5Activity
                 return;
             }
 
+            // Ensure calculations are up to date
+            button2_Click(sender, e);
+
             // In a real application, you would save to a database here
             MessageBox.Show($"Employee record for {txtFirstName.Text} {txtSurname.Text} saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Display payslip report
+            PayslipReport payslipForm = new PayslipReport(this);
+            payslipForm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
